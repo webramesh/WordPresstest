@@ -75,9 +75,6 @@ if ($books_query->have_posts()) :
         </div>
     </div>
 
-
-
-
     <script>
         jQuery(document).ready(function($) {
             $('#book-search-form').submit(function() {
