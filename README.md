@@ -38,3 +38,8 @@ require get_template_directory() . '/lib/custom-post.php';
 
 -   It is automatically front page so no need to set custom page but if you want to add you can still add by adding page and selecting page template.
 -   Select template : Book Page
+
+# Screenshots
+
+-   https://testwork.handworknepal.com/wp-content/uploads/2024/02/Screenshot-from-2024-02-22-10-13-44.png
+-   https://testwork.handworknepal.com/wp-content/uploads/2024/02/Screenshot-from-2024-02-22-10-13-28.png
