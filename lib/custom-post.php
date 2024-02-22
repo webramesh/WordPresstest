@@ -1,26 +1,44 @@
 <?php
 // Register Custom Post Type
-function custom_post_type_book()
-{
+function custom_post_type_book() {
     $labels = array(
-        'name' => _x('Books', 'Post Type General Name', 'text_domain'),
-        'singular_name' => _x('Book', 'Post Type Singular Name', 'text_domain'),
+        'name'               => _x( 'Books', 'Post Type General Name', 'text_domain' ),
+        'singular_name'      => _x( 'Book', 'Post Type Singular Name', 'text_domain' ),
+        'menu_name'          => _x( 'Books', 'Admin Menu text', 'text_domain' ),
+        'name_admin_bar'     => _x( 'Book', 'Add New on Toolbar', 'text_domain' ),
+        'add_new'            => __( 'Add New', 'text_domain' ),
+        'add_new_item'       => __( 'Add New Book', 'text_domain' ),
+        'new_item'           => __( 'New Book', 'text_domain' ),
+        'edit_item'          => __( 'Edit Book', 'text_domain' ),
+        'view_item'          => __( 'View Book', 'text_domain' ),
+        'all_items'          => __( 'All Books', 'text_domain' ),
+        'search_items'       => __( 'Search Books', 'text_domain' ),
+        'parent_item_colon'  => __( 'Parent Books:', 'text_domain' ),
+        'not_found'          => __( 'No books found.', 'text_domain' ),
+        'not_found_in_trash' => __( 'No books found in Trash.', 'text_domain' ),
     );
+
     $args = array(
-        'label' => __('Book', 'text_domain'),
-        'labels' => $labels,
-        'public' => true,
-        'hierarchical' => false,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'menu_icon' => 'dashicons-book-alt',
-        'show_in_nav_menus' => true,
-        'show_in_rest' => true,
-        'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'book' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_icon'          => 'dashicons-book-alt',
+        'menu_position'      => 20,
+        'show_in_rest'       => true,
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
     );
-    register_post_type('book', $args);
+
+    register_post_type( 'book', $args );
 }
-add_action('init', 'custom_post_type_book', 0);
+
+add_action( 'init', 'custom_post_type_book', 0 );
 
 // Register Custom Taxonomy
 function custom_taxonomy_genre()
